@@ -9,6 +9,8 @@
 
 from pathlib import Path
 
+PLACEHOLDER = "[name]"
+
 starting_letter = r"Input/Letters/starting_letter.txt"
 invited_names = r"Input/Names/invited_names.txt"
 
@@ -22,4 +24,4 @@ output_dir = Path("Output/ReadyToSend")
 
 for name in invite_list:
     with open(output_dir / f"{name}.txt", "w") as f:
-        f.write(letter_template.replace("[name]", name))
+        f.write(letter_template.replace(PLACEHOLDER, name))
