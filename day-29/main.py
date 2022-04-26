@@ -46,18 +46,11 @@ def save_password():
             title="Oops", message="Please don't leave any field empty!"
         )
     else:
-
-        is_ok = messagebox.askokcancel(
-            title=website,
-            message=f"These are the details entered: \nEmail: {email}\nPassword: {pw}\nIs it OK to save?",
-        )
-
-        if is_ok:
-            with open(PW_FILE, "a", newline="") as f:
-                csv_writer = csv.writer(f, dialect="excel")
-                csv_writer.writerow((website, email, pw))
-                website_entry.delete(0, tk.END)
-                password_entry.delete(0, tk.END)
+        with open(PW_FILE, "a", newline="") as f:
+            csv_writer = csv.writer(f, dialect="excel")
+            csv_writer.writerow((website, email, pw))
+            website_entry.delete(0, tk.END)
+            password_entry.delete(0, tk.END)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
