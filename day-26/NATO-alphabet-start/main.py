@@ -8,6 +8,11 @@ df = pd.read_csv(
 letter_dict = {row["letter"]: row["code"] for (index, row) in df.iterrows()}
 
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user_input = input("Enter a word: ")
-
-print([letter_dict[l] for l in user_input.upper()])
+while True:
+    user_input = input("Enter a word: ")
+    try:
+        print([letter_dict[l] for l in user_input.upper()])
+    except KeyError:
+        print("Sorry, only letters in the alphabet please.")
+    else:
+        break
