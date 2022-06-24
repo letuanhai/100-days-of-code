@@ -4,8 +4,8 @@ import random
 from collections import namedtuple
 import csv
 
-my_email = "letuanhai@live.com"
-pw = "ghsehyxulqdpmhon"
+my_email = ""
+pw = ""
 
 letter_templates = []
 for i in range(1, 4):
