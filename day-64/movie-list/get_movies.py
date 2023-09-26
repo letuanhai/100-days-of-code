@@ -18,6 +18,7 @@ def search_movies(key_word: str) -> list[dict]:
     r.raise_for_status()
     return r.json()["results"]
 
+
 def get_movie_details(movie_id: int) -> dict:
     params = {"api_key": os.environ["TMDB_AUTH_KEY"]}
     url = f'{API_LINK}{get_movie_endpoint}/{movie_id}'
