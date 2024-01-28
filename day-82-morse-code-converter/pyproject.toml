@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pymorse"
+dynamic = ["version"]
+description = "A CLI app to convert text to Morse code"
+requires-python = ">=3.9"
+authors = [{ name = "Le Tuan Hai", email = "letuanhai@live.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+
+[project.optional-dependencies]
+dev = ["black", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/letuanhai/pymorse"
+
+[project.scripts]
+pymorse = "pymorse.__main__:main"
+
+
+[tool.setuptools.dynamic]
+version = { attr = "pymorse.__version__" }
